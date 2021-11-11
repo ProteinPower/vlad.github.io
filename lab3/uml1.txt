@@ -1,0 +1,17 @@
+@startuml
+actor "Менеджер" as owner
+boundary "Электронная система мастерской" as app
+entity "База данных" as data
+actor "Швея" as trainee
+loop
+owner-> app : Внесение заказа
+app-> data : Запись заказа
+data-> app : Демонстрация заказа
+app-> trainee : Требования
+end
+loop
+-> data: Отзывы и опыт использования
+data-> app : Вывод в систему
+app-> trainee : Ткань
+end
+@enduml
